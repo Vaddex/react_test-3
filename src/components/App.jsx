@@ -2,7 +2,7 @@
 import LoginForm from "./LoginForm/LoginForm";
 import SearchBar from "./SearchBar/SearchBar";
 import LangSwitcher from "./LangSwitcher/LangSwitcher";
-import CoffeeSizeCheckbox from "./CoffeeSizeCheckbox/CoffeeSizeCheckbox";
+import CoffeeSizeRadiobtn from "./CoffeeSizeRadiobtn/CoffeeSizeCheckbox";
 import { useState } from "react";
 import "./App.css";
 
@@ -15,7 +15,7 @@ function App() {
     // default selected lang
     const [lang, setLang] = useState("ua");
 
-    // coffee size checkbox
+    // coffee size radiobtn
     const [coffeeSize, setCoffeeSize] = useState("sm");
 
     return (
@@ -30,7 +30,7 @@ function App() {
                 <p>Selected language: {lang}</p>
             </div>
 
-            <CoffeeSizeCheckbox
+            <CoffeeSizeRadiobtn
                 coffeeSize={coffeeSize}
                 setCoffeeSize={setCoffeeSize}
             />

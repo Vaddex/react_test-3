@@ -1,7 +1,7 @@
 import { useId } from "react";
-import css from "./CoffeeSizeCheckbox.module.css";
+import css from "./CoffeeSizeRadiobtn.module.css";
 
-const CoffeeSizeCheckbox = ({ coffeeSize, setCoffeeSize }) => {
+const CoffeeSizeRadiobtn = ({ coffeeSize, setCoffeeSize }) => {
     const selectID = useId();
     const handleSizeChange = (evt) => {
         setCoffeeSize(evt.target.value);
@@ -43,4 +43,4 @@ const CoffeeSizeCheckbox = ({ coffeeSize, setCoffeeSize }) => {
     );
 };
 
-export default CoffeeSizeCheckbox;
+export default CoffeeSizeRadiobtn;
