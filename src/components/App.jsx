@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar/SearchBar";
 import LangSwitcher from "./LangSwitcher/LangSwitcher";
 import CoffeeSizeRadiobtn from "./CoffeeSizeRadiobtn/CoffeeSizeCheckbox";
 import TermsAndConditionsCheckbox from "./TermsAndConditionsCheckbox/TermsAndConditionsCheckbox";
+import ControlledLoginForm from "./ControlledLoginForm/ControlledLoginForm";
 import { useState } from "react";
 import { useId } from "react";
 import "./App.css";
@@ -54,6 +55,8 @@ function App() {
                     I agree
                 </button>
             </div>
+
+            <ControlledLoginForm />
         </>
     );
 }
