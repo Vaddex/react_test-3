@@ -1,0 +1,15 @@
+.container {
+    background-color: rgb(128, 49, 160);
+    width: 200px;
+    height: 200px;
+    color: rgb(157, 221, 29);
+    margin: auto;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.btn {
+    align-self: flex-end;
+    border-radius: 20px;
+    color: rgb(148, 74, 74);
+}

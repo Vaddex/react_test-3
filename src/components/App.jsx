@@ -5,9 +5,12 @@ import LangSwitcher from "./LangSwitcher/LangSwitcher";
 import CoffeeSizeRadiobtn from "./CoffeeSizeRadiobtn/CoffeeSizeCheckbox";
 import TermsAndConditionsCheckbox from "./TermsAndConditionsCheckbox/TermsAndConditionsCheckbox";
 import ControlledLoginForm from "./ControlledLoginForm/ControlledLoginForm";
+import TaskList from "./TaskList/TaskList";
+import initialTasks from "../tasks.json";
 import { useState } from "react";
 import { useId } from "react";
 import "./App.css";
+import TaskForm from "./TaskForm/TaskForm";
 
 function App() {
     // generate unique id
@@ -20,7 +23,6 @@ function App() {
     };
 
     // default selected lang
-
     const [lang, setLang] = useState("ua");
 
     // coffee size radiobtn
@@ -28,6 +30,23 @@ function App() {
 
     // checkbox checker
     const [hasAccepted, setHasAccepted] = useState(false);
+
+    // task form
+    const [tasks, setTasks] = useState(initialTasks);
+
+    // create task
+    const createTask = (newTask) => {
+        setTasks((prevTasks) => {
+            return [...prevTasks, newTask];
+        });
+    };
+
+    // delete task
+    const deleteTask = (taskId) => {
+        setTasks((prevTasks) => {
+            return prevTasks.filter((task) => task.id !== taskId);
+        });
+    };
 
     return (
         <>
@@ -57,6 +76,11 @@ function App() {
             </div>
 
             <ControlledLoginForm />
+
+            <div>
+                <TaskForm onAdd={createTask} />
+                <TaskList tasks={tasks} onDelete={deleteTask} />
+            </div>
         </>
     );
 }

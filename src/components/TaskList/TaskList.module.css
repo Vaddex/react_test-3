@@ -1,0 +1,16 @@
+.container {
+    border: 1px dotted navy;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.taskBox {
+    background-color: rgb(184, 99, 30);
+    border-radius: 15px;
+    margin: 5px;
+    height: 250px;
+    width: auto;
+    font-size: large;
+    list-style-type: none;
+}
