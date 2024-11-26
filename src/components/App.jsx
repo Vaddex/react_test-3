@@ -6,6 +6,7 @@ import CoffeeSizeRadiobtn from "./CoffeeSizeRadiobtn/CoffeeSizeCheckbox";
 import TermsAndConditionsCheckbox from "./TermsAndConditionsCheckbox/TermsAndConditionsCheckbox";
 import ControlledLoginForm from "./ControlledLoginForm/ControlledLoginForm";
 import TaskList from "./TaskList/TaskList";
+import FilterTask from "./FilterTask/FilterTask";
 import initialTasks from "../tasks.json";
 import { useState } from "react";
 import { useId } from "react";
@@ -34,6 +35,9 @@ function App() {
     // task form
     const [tasks, setTasks] = useState(initialTasks);
 
+    // filter task
+    const [filter, setFilter] = useState("");
+
     // create task
     const createTask = (newTask) => {
         setTasks((prevTasks) => {
@@ -47,6 +51,10 @@ function App() {
             return prevTasks.filter((task) => task.id !== taskId);
         });
     };
+
+    const visibleTasks = tasks.filter((task) =>
+        task.text.toLowerCase().includes(filter.toLowerCase())
+    );
 
     return (
         <>
@@ -79,7 +87,8 @@ function App() {
 
             <div>
                 <TaskForm onAdd={createTask} />
-                <TaskList tasks={tasks} onDelete={deleteTask} />
+                <FilterTask value={filter} onFilter={setFilter} />
+                <TaskList tasks={visibleTasks} onDelete={deleteTask} />
             </div>
         </>
     );

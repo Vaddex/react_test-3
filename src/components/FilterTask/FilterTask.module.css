@@ -1,0 +1,14 @@
+.container {
+    border: 20px;
+    color: rgb(76, 8, 184);
+    margin-bottom: 40px;
+}
+
+.label {
+    color: rgb(98, 75, 119);
+    font-size: large;
+}
+
+.input {
+    border-radius: 20px;
+}
