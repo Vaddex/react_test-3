@@ -8,6 +8,7 @@ import ControlledLoginForm from "./ControlledLoginForm/ControlledLoginForm";
 import TaskList from "./TaskList/TaskList";
 import FilterTask from "./FilterTask/FilterTask";
 import initialTasks from "../tasks.json";
+import FeedbackForm from "./FeedbackForm/FeedbackForm";
 import { useState } from "react";
 import { useId } from "react";
 import "./App.css";
@@ -90,6 +91,8 @@ function App() {
                 <FilterTask value={filter} onFilter={setFilter} />
                 <TaskList tasks={visibleTasks} onDelete={deleteTask} />
             </div>
+
+            <FeedbackForm />
         </>
     );
 }
