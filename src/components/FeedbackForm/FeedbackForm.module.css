@@ -1,4 +1,12 @@
 .container {
     border: 1px dotted violet;
     margin-bottom: 40px;
+    display: flex;
+    gap: 10px;
+}
+
+.error {
+    color: rgb(195, 211, 55);
+    background-color: tomato;
+    border-radius: 20px;
 }
